@@ -1,11 +1,20 @@
-@import 'base/reset';
-@import 'base/typography';
-@import "components/cards";
-@import "components/buttons";
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/nav';
-@import 'pages/home';
-@import 'pages/menu';
+// utils
 @import 'utils/variables';
 @import 'utils/mixins';
+
+// base
+@import 'base/reset';
+@import 'base/typography';
+
+// layout
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/footer';
+
+// components
+@import 'components/cards';
+@import 'components/buttons';
+
+// pages
+@import 'pages/home';
+@import 'pages/menu';
