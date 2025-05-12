@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -15,9 +20,11 @@
 }
 
 .footer {
+  width: 100%;
   background-color: #353535;
   color: white;
   padding: 25px 20px;
+  box-sizing: border-box;
 }
 .footer__logo {
   font-family: "Shrikhand", cursive;

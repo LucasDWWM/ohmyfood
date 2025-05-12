@@ -1,7 +1,11 @@
+//Le & en SCSS (Sass) est un sélecteur parent, et il est utilisé pour faire référence à l'élément englobant
+
 .footer {
+  width: 100%;
   background-color: #353535;
   color: white;
   padding: 25px 20px;
+  box-sizing: border-box; 
 
   &__logo {
     font-family: 'Shrikhand', cursive;
