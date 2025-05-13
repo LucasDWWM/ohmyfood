@@ -1,3 +1,5 @@
+// Localisation
+
 .location {
   background-color: #EAEAEA;
   padding: 15px;
@@ -16,3 +18,42 @@
 }
 
 
+// Intro 
+
+.intro {
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 40px 20px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  p{
+    margin-bottom: 38px;
+  }
+
+  .btn {
+    background: linear-gradient(to right, $primary-color, $secondary-color);
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

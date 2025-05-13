@@ -53,6 +53,7 @@ body {
 
 .card {
   background: white;
+  margin: 8px;
   margin-bottom: 15px;
   border-radius: 15px;
   overflow: hidden;
@@ -132,6 +133,39 @@ body {
 }
 .location span {
   font-weight: 500;
+}
+
+.intro {
+  background-color: #F6F6F6;
+  text-align: center;
+  padding: 40px 20px;
+}
+.intro__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intro__subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+.intro p {
+  margin-bottom: 38px;
+}
+.intro .btn {
+  background: linear-gradient(to right, #9356DC, #FF79DA);
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.intro .btn:hover {
+  opacity: 0.8;
 }
 
 /*# sourceMappingURL=main.css.map */
