@@ -147,20 +147,39 @@
       color: #818181;
     }
   }
-
-  @media (min-width: 768px) {
-    .fonctionnement .steps {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .fonctionnement .steps li {
-      flex: 1;
-    }
-  }
 }
-
 
 .margin_Left{
   margin-left: 15px;
 }
+
+////// MEDIA QUERIES ////////////
+
+
+@media (min-width: 768px) {
+  // Fonctionnement en ligne
+  .fonctionnement .steps {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .fonctionnement .steps li {
+    flex: 1;
+  }
+
+  // Cartes de restaurants en grille 2 colonnes
+  .restaurants .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  // Ajout d’un max-width pour centrer le contenu
+  .intro,.fonctionnement,.restaurants {
+    max-width: 1290px;
+    margin: 0 auto;
+  }
+}
+
