@@ -11,3 +11,23 @@
     font-size: 30px;
   }
 }
+
+
+.nav--menu {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  .nav__back {
+    position: absolute;
+    left: 20px;
+    font-size: 22px;
+    color: black;
+  }
+
+  .nav__logo {
+    height: 33px;
+    margin: 0 auto;
+    display: block;
+  }
+}

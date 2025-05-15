@@ -1,19 +1,20 @@
-//Le & en SCSS (Sass) est un sélecteur parent, et il est utilisé pour faire référence à l'élément englobant
-
 .footer {
   width: 100%;
-  margin-top: 48px;
   padding: 25px 20px;
   color: white;
   background-color: #353535;
   box-sizing: border-box;
+
+  // Appliquer le margin-top uniquement si le body a la classe home
+  body.home & {
+    margin-top: 70px;
+  }
 
   &__logo {
     margin-bottom: 20px;
 
     img {
       height: 20px;
-      // Permet d'éclaircir un PNG noir si nécessaire 
       filter: brightness(0) invert(1);
     }
   }
