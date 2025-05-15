@@ -63,9 +63,6 @@ body {
   background-color: #353535;
   box-sizing: border-box;
 }
-body.home .footer {
-  margin-top: 70px;
-}
 .footer__logo {
   margin-bottom: 20px;
 }
@@ -93,6 +90,79 @@ body.home .footer {
   text-decoration: underline;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    padding: 30px 40px;
+  }
+  .footer__logo {
+    margin: 0;
+  }
+  .footer__logo img {
+    height: 20px;
+  }
+  .footer__links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin: 0;
+    margin-right: 25px;
+  }
+  .footer__links li {
+    white-space: nowrap;
+  }
+  .footer__links li a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+@media (min-width: 1024px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 50px 100px;
+  }
+  .footer__links {
+    flex-direction: row;
+    gap: 40px;
+    margin-left: 3vh;
+  }
+  .footer__logo {
+    margin: 0;
+    align-self: flex-end;
+  }
+  .footer__logo img {
+    height: 20px;
+  }
+}
+@media (min-width: 1473px) {
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 50px 100px;
+  }
+  .footer__links {
+    flex-direction: row;
+    gap: 40px;
+    margin-left: 93vh;
+  }
+  .footer__logo {
+    margin: 0;
+    align-self: flex-end;
+  }
+  .footer__logo img {
+    height: 20px;
+  }
+}
 .card {
   background: white;
   margin: 8px;
@@ -306,11 +376,24 @@ body.home .footer {
   color: #818181;
 }
 
+.restaurants {
+  width: 100%;
+  background-color: #F6F6F6;
+  padding-bottom: 70px;
+}
+
 .margin_Left {
   margin-left: 15px;
 }
 
+.padding_Top {
+  padding-top: 15px;
+}
+
 @media (min-width: 768px) {
+  .intro p {
+    max-width: none;
+  }
   .fonctionnement .steps {
     flex-direction: row;
     justify-content: space-between;
@@ -323,11 +406,25 @@ body.home .footer {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
+  .restaurants {
+    padding-bottom: 35px;
+  }
 }
 @media (min-width: 1024px) {
-  .intro, .fonctionnement, .restaurants {
+  .fonctionnement, .restaurants {
     max-width: 1290px;
     margin: 0 auto;
+  }
+  .intro {
+    max-width: 2500px;
+    margin: 0 auto;
+  }
+  .intro h2 {
+    font-size: 50px;
+  }
+  .intro p {
+    font-size: 25px;
+    max-width: none;
   }
 }
 .restaurant__banner img {
@@ -390,7 +487,7 @@ body.home .footer {
 .menu__item {
   background: white;
   border-radius: 15px;
-  padding: 15px 20px;
+  padding: 15px 13px;
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
