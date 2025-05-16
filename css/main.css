@@ -213,22 +213,31 @@ body {
   position: absolute;
   right: 15px;
   top: 15px;
+  display: inline-block;
+  cursor: pointer;
 }
-.card__heart i.fa-solid.fa-heart {
+.card__heart input {
+  display: none;
+}
+.card__heart i {
+  font-size: 20px;
   position: absolute;
-  left: 0;
   top: 0;
-  color: #9356DC;
-  opacity: 0;
+  left: 0;
   transition: opacity 0.3s ease;
 }
-.card__heart i.fa-regular.fa-heart {
-  transition: opacity 0.3s ease;
-}
-.card__heart:hover i.fa-solid.fa-heart {
+.card__heart .fa-regular {
+  color: black;
   opacity: 1;
 }
-.card__heart:hover i.fa-regular.fa-heart {
+.card__heart .fa-solid {
+  color: #9356DC;
+  opacity: 0;
+}
+.card__heart input:checked ~ .fa-solid {
+  opacity: 1;
+}
+.card__heart input:checked ~ .fa-regular {
   opacity: 0;
 }
 
@@ -244,9 +253,62 @@ body {
   text-align: center;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(to right, rgb(160.5, 107.125, 224.375), rgb(255, 146.5, 225.0410447761));
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+.loader {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1s forwards;
+  animation-delay: 2.5s;
+  pointer-events: none;
+}
+
+.loader__spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #9356DC;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loader__text {
+  font-family: "Shrikhand", cursive;
+  font-size: 24px;
+  color: #9356DC;
+  opacity: 0;
+  animation: appear 0.5s 1.2s forwards ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 .location {
   background-color: #EAEAEA;
   padding: 8px 0;
@@ -461,22 +523,30 @@ body {
 }
 .menu__header .menu__heart {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.menu__header .menu__heart input {
+  display: none;
 }
 .menu__header .menu__heart i {
   font-size: 22px;
   top: 0;
   left: 0;
-  color: #000;
-  opacity: 0;
   transition: opacity 0.3s ease;
 }
-.menu__header .menu__heart i.fa-regular {
+.menu__header .menu__heart .fa-regular {
+  color: black;
   opacity: 1;
 }
-.menu__header .menu__heart:hover i.fa-solid {
+.menu__header .menu__heart .fa-solid {
+  color: #9356DC;
+  opacity: 0;
+}
+.menu__header .menu__heart input:checked ~ .fa-solid {
   opacity: 1;
 }
-.menu__header .menu__heart:hover i.fa-regular {
+.menu__header .menu__heart input:checked ~ .fa-regular {
   opacity: 0;
 }
 .menu__subtitle {
@@ -504,6 +574,7 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
+  padding-right: 60px;
   opacity: 0;
   animation: fade-in-up 0.6s ease forwards;
 }
@@ -525,14 +596,16 @@ body {
 }
 .menu__item__check {
   color: #99E2D0;
-  margin-left: 15px;
   font-size: 20px;
-  transform: translateX(20px);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) translateX(20px);
   opacity: 0;
   transition: all 0.3s ease;
 }
 .menu__item:hover .menu__item__check {
-  transform: translateX(0);
+  transform: translateY(-50%) translateX(0);
   opacity: 1;
 }
 .menu__order {
@@ -634,54 +707,6 @@ body {
   .menu__header {
     justify-content: center;
     gap: 30px;
-  }
-}
-.loader {
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: fadeOut 1s forwards;
-  animation-delay: 2.5s;
-  pointer-events: none;
-}
-
-.loader__spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #9356DC;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: 20px;
-}
-
-.loader__text {
-  font-family: "Shrikhand", cursive;
-  font-size: 24px;
-  color: #9356DC;
-  opacity: 0;
-  animation: appear 0.5s 1.2s forwards ease-in-out;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes appear {
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
   }
 }
 

@@ -38,28 +38,36 @@
 
     .menu__heart {
       position: relative;
+      display: inline-block;
+      cursor: pointer;
+
+      input {
+        display: none;
+      }
 
       i {
         font-size: 22px;
         top: 0;
         left: 0;
-        color: #000;
-        opacity: 0;
         transition: opacity 0.3s ease;
-
-        &.fa-regular {
-          opacity: 1;
-        }
       }
 
-      &:hover {
-        i.fa-solid {
-          opacity: 1;
-        }
+      .fa-regular {
+        color: black;
+        opacity: 1;
+      }
 
-        i.fa-regular {
-          opacity: 0;
-        }
+      .fa-solid {
+        color: #9356DC;
+        opacity: 0;
+      }
+
+      input:checked ~ .fa-solid {
+        opacity: 1;
+      }
+
+      input:checked ~ .fa-regular {
+        opacity: 0;
       }
     }
   }
@@ -91,8 +99,7 @@
     align-items: center;
     position: relative;
     cursor: pointer;
-
-    // Animation
+    padding-right: 60px;
     opacity: 0;
     animation: fade-in-up 0.6s ease forwards;
 
@@ -118,20 +125,21 @@
 
     &__check {
       color: #99E2D0;
-      margin-left: 15px;
       font-size: 20px;
-      transform: translateX(20px);
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%) translateX(20px);
       opacity: 0;
       transition: all 0.3s ease;
     }
 
     &:hover &__check {
-      transform: translateX(0);
+      transform: translateY(-50%) translateX(0);
       opacity: 1;
     }
   }
 
-  // ORDRE DU BOUTON
   &__order {
     display: flex;
     justify-content: center;
@@ -139,7 +147,7 @@
   }
 }
 
-// DÉCALAGE DES ANIMATIONS ITEM PAR ITEM (max 6 ici, à adapter selon besoins)
+// DÉCALAGE DES ANIMATIONS ITEM PAR ITEM
 .menu__section .menu__item:nth-child(1) {
   animation-delay: 0.2s;
 }

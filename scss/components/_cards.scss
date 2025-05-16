@@ -1,6 +1,3 @@
-
-//Le & en SCSS (Sass) est un sélecteur parent, et il est utilisé pour faire référence à l'élément englobant
-
 .card {
   background: white;
   margin: 8px;
@@ -58,28 +55,37 @@
     position: absolute;
     right: 15px;
     top: 15px;
+    display: inline-block;
+    cursor: pointer;
 
-    i.fa-solid.fa-heart {
+    input {
+      display: none;
+    }
+
+    i {
+      font-size: 20px;
       position: absolute;
-      left: 0;
       top: 0;
+      left: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .fa-regular {
+      color: black;
+      opacity: 1;
+    }
+
+    .fa-solid {
       color: $primary-color;
       opacity: 0;
-      transition: opacity 0.3s ease;
     }
 
-    i.fa-regular.fa-heart {
-      transition: opacity 0.3s ease;
+    input:checked ~ .fa-solid {
+      opacity: 1;
     }
 
-    &:hover {
-      i.fa-solid.fa-heart {
-        opacity: 1;
-      }
-
-      i.fa-regular.fa-heart {
-        opacity: 0;
-      }
+    input:checked ~ .fa-regular {
+      opacity: 0;
     }
   }
 }

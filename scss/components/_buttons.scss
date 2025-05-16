@@ -1,14 +1,20 @@
-    .btn {
-        display: inline-block;
-        padding: 16px 42px;
-        border: none;
-        border-radius: 25px;
-        background: linear-gradient(to right, #9356DC, #FF79DA);
-        color: white;
-        font-weight: 500;
-        font-size: 16px;
-        text-align: center;
-        text-decoration: none;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: transform 0.2s ease;
-    }
+.btn {
+  display: inline-block;
+  padding: 16px 42px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #9356DC, #FF79DA);
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(to right, lighten(#9356DC, 5%), lighten(#FF79DA, 5%));
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+}
