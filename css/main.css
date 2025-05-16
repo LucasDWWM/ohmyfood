@@ -376,17 +376,19 @@ body {
   color: #818181;
 }
 
-.restaurants {
-  width: 100%;
+.bg-gray {
   background-color: #F6F6F6;
-  padding-bottom: 70px;
+  width: 100%;
 }
 
-.margin_Left {
+.restaurants {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.restaurants h2 {
   margin-left: 15px;
-}
-
-.padding_Top {
   padding-top: 15px;
 }
 
@@ -405,9 +407,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-  }
-  .restaurants {
-    padding-bottom: 35px;
   }
 }
 @media (min-width: 1024px) {
