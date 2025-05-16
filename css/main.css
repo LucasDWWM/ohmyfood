@@ -426,6 +426,16 @@ body {
     max-width: none;
   }
 }
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .restaurant__banner img {
   width: 100%;
   height: 250px;
@@ -494,6 +504,8 @@ body {
   align-items: center;
   position: relative;
   cursor: pointer;
+  opacity: 0;
+  animation: fade-in-up 0.6s ease forwards;
 }
 .menu__item__text {
   flex: 1;
@@ -527,6 +539,30 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+}
+
+.menu__section .menu__item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.menu__section .menu__item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.menu__section .menu__item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.menu__section .menu__item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.menu__section .menu__item:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.menu__section .menu__item:nth-child(6) {
+  animation-delay: 1.2s;
 }
 
 @media (min-width: 768px) {
@@ -598,6 +634,54 @@ body {
   .menu__header {
     justify-content: center;
     gap: 30px;
+  }
+}
+.loader {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 1s forwards;
+  animation-delay: 2.5s;
+  pointer-events: none;
+}
+
+.loader__spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #9356DC;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loader__text {
+  font-family: "Shrikhand", cursive;
+  font-size: 24px;
+  color: #9356DC;
+  opacity: 0;
+  animation: appear 0.5s 1.2s forwards ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

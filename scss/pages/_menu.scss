@@ -1,4 +1,16 @@
+// ANIMATIONS KEYFRAMES
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+// IMAGE DU RESTAURANT
 .restaurant__banner img {
   width: 100%;
   height: 250px;
@@ -6,13 +18,13 @@
   display: block;
 }
 
+// MENU
 .menu {
   background: #f6f6f6;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   margin-top: -40px;
   padding: 30px 15px;
-
 
   &__header {
     display: flex;
@@ -80,6 +92,10 @@
     position: relative;
     cursor: pointer;
 
+    // Animation
+    opacity: 0;
+    animation: fade-in-up 0.6s ease forwards;
+
     &__text {
       flex: 1;
 
@@ -115,6 +131,7 @@
     }
   }
 
+  // ORDRE DU BOUTON
   &__order {
     display: flex;
     justify-content: center;
@@ -122,9 +139,27 @@
   }
 }
 
+// DÉCALAGE DES ANIMATIONS ITEM PAR ITEM (max 6 ici, à adapter selon besoins)
+.menu__section .menu__item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.menu__section .menu__item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.menu__section .menu__item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.menu__section .menu__item:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.menu__section .menu__item:nth-child(5) {
+  animation-delay: 1s;
+}
+.menu__section .menu__item:nth-child(6) {
+  animation-delay: 1.2s;
+}
 
-// MEDIA QUERIES // 
-
+// MEDIA QUERIES
 @media (min-width: 768px) {
   .menu {
     padding: 50px 60px;
