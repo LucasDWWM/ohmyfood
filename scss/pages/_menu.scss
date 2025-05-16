@@ -3,6 +3,7 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+  display: block;
 }
 
 .menu {
@@ -11,6 +12,7 @@
   border-top-right-radius: 30px;
   margin-top: -40px;
   padding: 30px 15px;
+
 
   &__header {
     display: flex;
@@ -117,5 +119,98 @@
     display: flex;
     justify-content: center;
     margin-top: 40px;
+  }
+}
+
+
+// MEDIA QUERIES // 
+
+@media (min-width: 768px) {
+  .menu {
+    padding: 50px 60px;
+    position: relative;
+    margin-top: -50px;
+
+    &__header {
+      justify-content: center;
+      gap: 20px;
+    }
+
+    &__title {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    &__section {
+      margin-top: 50px;
+
+      .menu__subtitle {
+        font-size: 20px;
+      }
+
+      .menu__items {
+        gap: 20px;
+      }
+    }
+
+    &__item {
+      padding: 20px;
+
+      &__text h3 {
+        font-size: 18px;
+      }
+
+      &__text p {
+        font-size: 16px;
+      }
+
+      &__price {
+        font-size: 16px;
+      }
+    }
+
+    &__order {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    max-width: 1050px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -50px;
+    padding: 50px 80px;
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__item {
+      padding: 25px 30px;
+
+      &__text h3 {
+        font-size: 20px;
+      }
+
+      &__text p {
+        font-size: 17px;
+      }
+
+      &__price {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .restaurant__banner img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .menu__header {
+    justify-content: center;
+    gap: 30px;
   }
 }

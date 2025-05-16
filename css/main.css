@@ -182,7 +182,7 @@ body {
 }
 .card__image-wrapper img {
   width: 100%;
-  height: 170px;
+  height: 255px;
   object-fit: cover;
 }
 .card__badge {
@@ -430,6 +430,7 @@ body {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  display: block;
 }
 
 .menu {
@@ -526,6 +527,78 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    padding: 50px 60px;
+    position: relative;
+    margin-top: -50px;
+  }
+  .menu__header {
+    justify-content: center;
+    gap: 20px;
+  }
+  .menu__title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .menu__section {
+    margin-top: 50px;
+  }
+  .menu__section .menu__subtitle {
+    font-size: 20px;
+  }
+  .menu__section .menu__items {
+    gap: 20px;
+  }
+  .menu__item {
+    padding: 20px;
+  }
+  .menu__item__text h3 {
+    font-size: 18px;
+  }
+  .menu__item__text p {
+    font-size: 16px;
+  }
+  .menu__item__price {
+    font-size: 16px;
+  }
+  .menu__order {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .menu {
+    max-width: 1050px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -50px;
+    padding: 50px 80px;
+  }
+  .menu__title {
+    font-size: 36px;
+  }
+  .menu__item {
+    padding: 25px 30px;
+  }
+  .menu__item__text h3 {
+    font-size: 20px;
+  }
+  .menu__item__text p {
+    font-size: 17px;
+  }
+  .menu__item__price {
+    font-size: 17px;
+  }
+  .restaurant__banner img {
+    height: 400px;
+    object-fit: cover;
+  }
+  .menu__header {
+    justify-content: center;
+    gap: 30px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
