@@ -37,40 +37,46 @@
     }
 
     .menu__heart {
-      position: relative;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    label {
       display: inline-block;
-      cursor: pointer;
+      position: relative;
+    }
 
-      input {
-        display: none;
-      }
+    input {
+      display: none;
+    }
 
-      i {
-        font-size: 22px;
-        top: 0;
-        left: 0;
-        transition: opacity 0.3s ease;
-      }
+    i {
+      font-size: 22px;
+      position: relative;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease;
+    }
 
-      .fa-regular {
-        color: black;
-        opacity: 1;
-      }
+    .fa-regular {
+      color: black;
+      opacity: 1;
+    }
 
-      .fa-solid {
-        color: #9356DC;
-        opacity: 0;
-      }
+    .fa-solid {
+      color: #9356DC;
+      opacity: 0;
+    }
 
-      input:checked ~ .fa-solid {
-        opacity: 1;
-      }
+    input:checked ~ .fa-solid {
+      opacity: 1;
+    }
 
-      input:checked ~ .fa-regular {
-        opacity: 0;
-      }
+    input:checked ~ .fa-regular {
+      opacity: 0;
     }
   }
+}
 
   &__subtitle {
     font-size: 16px;
