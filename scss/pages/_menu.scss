@@ -28,7 +28,6 @@
 
   &__header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     .menu__title {
@@ -40,6 +39,7 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
+    margin-left: 30px;
 
     label {
       display: inline-block;
@@ -51,7 +51,7 @@
     }
 
     i {
-      font-size: 22px;
+      font-size: 25px;
       position: relative;
       top: 0;
       left: 0;
@@ -134,7 +134,7 @@
 
     h3 {
       margin: 0;
-      font-size: 18px;
+      font-size: 15px;
     }
 
     p {
@@ -180,7 +180,7 @@
   }
 
   input[type="checkbox"]:checked ~ .menu__item__price {
-    transform: translateX(-40px);
+    transform: translateX(-35px);
   }
 
   input[type="checkbox"]:checked ~ .menu__item__check {

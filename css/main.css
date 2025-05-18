@@ -515,7 +515,6 @@ body {
 }
 .menu__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .menu__header .menu__title {
@@ -526,6 +525,7 @@ body {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  margin-left: 30px;
 }
 .menu__header .menu__heart label {
   display: inline-block;
@@ -535,7 +535,7 @@ body {
   display: none;
 }
 .menu__header .menu__heart i {
-  font-size: 22px;
+  font-size: 25px;
   position: relative;
   top: 0;
   left: 0;
@@ -607,7 +607,7 @@ body {
 }
 .menu .menu__item__text h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 15px;
 }
 .menu .menu__item__text p {
   margin: 5px 0 0;
@@ -645,7 +645,7 @@ body {
   transform: translateX(0);
 }
 .menu .menu__item input[type=checkbox]:checked ~ .menu__item__price {
-  transform: translateX(-40px);
+  transform: translateX(-35px);
 }
 .menu .menu__item input[type=checkbox]:checked ~ .menu__item__check {
   transform: translateY(-50%) scale(1);
