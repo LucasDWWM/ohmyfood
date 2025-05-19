@@ -572,18 +572,15 @@ body {
   margin-top: 5px;
 }
 .menu .menu__item {
+  position: relative;
+  display: flex;
+  align-items: center;
   background: white;
   border-radius: 15px;
   margin: 10px 0;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
   padding: 15px;
-  opacity: 0;
-  animation: fade-in-up 0.6s ease forwards;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
 }
 .menu .menu__item input[type=checkbox] {
   display: none;
@@ -641,13 +638,13 @@ body {
 .menu .menu__item__check i {
   font-size: 14px;
 }
-.menu .menu__item input[type=checkbox]:checked ~ .menu__item__bg {
+.menu .menu__item input:checked ~ .menu__item__bg {
   transform: translateX(0);
 }
-.menu .menu__item input[type=checkbox]:checked ~ .menu__item__price {
+.menu .menu__item input:checked ~ .menu__item__price {
   transform: translateX(-35px);
 }
-.menu .menu__item input[type=checkbox]:checked ~ .menu__item__check {
+.menu .menu__item input:checked ~ .menu__item__check {
   transform: translateY(-50%) scale(1);
 }
 .menu__order {
