@@ -106,8 +106,9 @@
     padding: 15px;
     cursor: pointer;
     overflow: hidden;
-    animation: fade-in-up 0.6s ease forwards;
     opacity: 0;
+    animation: fade-in-up 0.6s ease forwards;
+    transition: background-color 0.3s ease;
 
     input[type="checkbox"] {
       display: none;
@@ -173,29 +174,21 @@
       }
     }
 
-    // État "checked"
-    input[type="checkbox"]:checked ~ .menu__item__bg {
+    // MOBILE : effets au clic
+    input:checked ~ .menu__item__bg {
       transform: translateX(0);
     }
 
-    input[type="checkbox"]:checked ~ .menu__item__price {
+    input:checked ~ .menu__item__price {
       transform: translateX(-35px);
     }
 
-    input[type="checkbox"]:checked ~ .menu__item__check {
+    input:checked ~ .menu__item__check {
       transform: translateY(-50%) scale(1);
     }
 
-    // Texte h3 ... quand btn check est activé 
-    input[type="checkbox"]:checked ~ .menu__item__text h3 {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 160px;
-    }
-
-    // Texte p ... quand btn check est activé
-    input[type="checkbox"]:checked ~ .menu__item__text p {
+    input:checked ~ .menu__item__text h3,
+    input:checked ~ .menu__item__text p {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -210,7 +203,7 @@
   }
 }
 
-// DÉCALAGE DES ANIMATIONS ITEM PAR ITEM
+// ANIMATION DELAY ITEM PAR ITEM
 .menu__section .menu__item:nth-child(1) {
   animation-delay: 0.2s;
 }
@@ -234,7 +227,6 @@
 @media (min-width: 768px) {
   .menu {
     padding: 50px 60px;
-    position: relative;
     margin-top: -50px;
 
     &__header {
@@ -259,24 +251,46 @@
       }
     }
 
-    &__item {
-      padding: 20px;
-
-      &__text h3 {
-        font-size: 18px;
-      }
-
-      &__text p {
-        font-size: 16px;
-      }
-
-      &__price {
-        font-size: 16px;
-      }
-    }
-
     &__order {
       margin-top: 50px;
+    }
+
+    .menu__item {
+      padding: 20px;
+
+      // Désactive les effets de CHECK sur desktop
+      input:checked ~ .menu__item__bg {
+        transform: translateX(100%);
+      }
+
+      input:checked ~ .menu__item__price {
+        transform: none;
+      }
+
+      input:checked ~ .menu__item__check {
+        transform: translateY(-50%) scale(0);
+      }
+
+      input:checked ~ .menu__item__text h3,
+      input:checked ~ .menu__item__text p {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        max-width: none;
+      }
+
+      // HOVER uniquement desktop
+      &:hover .menu__item__bg {
+        transform: translateX(0);
+      }
+
+      &:hover .menu__item__price {
+        transform: translateX(-35px);
+      }
+
+      &:hover .menu__item__check {
+        transform: translateY(-50%) scale(1);
+      }
     }
   }
 }
@@ -285,29 +299,7 @@
   .menu {
     max-width: 1050px;
     margin: 0 auto;
-    position: relative;
-    margin-top: -50px;
     padding: 50px 80px;
-
-    &__title {
-      font-size: 36px;
-    }
-
-    &__item {
-      padding: 25px 30px;
-
-      &__text h3 {
-        font-size: 20px;
-      }
-
-      &__text p {
-        font-size: 17px;
-      }
-
-      &__price {
-        font-size: 17px;
-      }
-    }
   }
 
   .restaurant__banner img {
@@ -318,5 +310,21 @@
   .menu__header {
     justify-content: center;
     gap: 30px;
+  }
+
+  .menu__item {
+    padding: 25px 30px;
+
+    .menu__item__text h3 {
+      font-size: 20px;
+    }
+
+    .menu__item__text p {
+      font-size: 17px;
+    }
+
+    .menu__item__price {
+      font-size: 17px;
+    }
   }
 }
