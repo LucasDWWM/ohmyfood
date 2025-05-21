@@ -174,7 +174,7 @@
       }
     }
 
-    // MOBILE : effets au clic
+    // Mobile - checked styles
     input:checked ~ .menu__item__bg {
       transform: translateX(0);
     }
@@ -203,7 +203,7 @@
   }
 }
 
-// ANIMATION DELAY ITEM PAR ITEM
+// DÉCALAGE DES ANIMATIONS ITEM PAR ITEM
 .menu__section .menu__item:nth-child(1) {
   animation-delay: 0.2s;
 }
@@ -227,6 +227,7 @@
 @media (min-width: 768px) {
   .menu {
     padding: 50px 60px;
+    position: relative;
     margin-top: -50px;
 
     &__header {
@@ -251,14 +252,14 @@
       }
     }
 
-    &__order {
-      margin-top: 50px;
-    }
-
-    .menu__item {
+    &__item {
       padding: 20px;
 
-      // Désactive les effets de CHECK sur desktop
+      input[type="checkbox"] {
+        pointer-events: none;
+      }
+
+      // Supprimer les effets du checked sur desktop
       input:checked ~ .menu__item__bg {
         transform: translateX(100%);
       }
@@ -279,7 +280,7 @@
         max-width: none;
       }
 
-      // HOVER uniquement desktop
+      // Hover only (desktop)
       &:hover .menu__item__bg {
         transform: translateX(0);
       }
@@ -292,6 +293,10 @@
         transform: translateY(-50%) scale(1);
       }
     }
+
+    &__order {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -299,7 +304,29 @@
   .menu {
     max-width: 1050px;
     margin: 0 auto;
+    position: relative;
+    margin-top: -50px;
     padding: 50px 80px;
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__item {
+      padding: 25px 30px;
+
+      &__text h3 {
+        font-size: 20px;
+      }
+
+      &__text p {
+        font-size: 17px;
+      }
+
+      &__price {
+        font-size: 17px;
+      }
+    }
   }
 
   .restaurant__banner img {
@@ -310,21 +337,5 @@
   .menu__header {
     justify-content: center;
     gap: 30px;
-  }
-
-  .menu__item {
-    padding: 25px 30px;
-
-    .menu__item__text h3 {
-      font-size: 20px;
-    }
-
-    .menu__item__text p {
-      font-size: 17px;
-    }
-
-    .menu__item__price {
-      font-size: 17px;
-    }
   }
 }

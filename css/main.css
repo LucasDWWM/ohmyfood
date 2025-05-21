@@ -690,6 +690,7 @@ body {
 @media (min-width: 768px) {
   .menu {
     padding: 50px 60px;
+    position: relative;
     margin-top: -50px;
   }
   .menu__header {
@@ -709,43 +710,63 @@ body {
   .menu__section .menu__items {
     gap: 20px;
   }
-  .menu__order {
-    margin-top: 50px;
-  }
-  .menu .menu__item {
+  .menu__item {
     padding: 20px;
   }
-  .menu .menu__item input:checked ~ .menu__item__bg {
+  .menu__item input[type=checkbox] {
+    pointer-events: none;
+  }
+  .menu__item input:checked ~ .menu__item__bg {
     transform: translateX(100%);
   }
-  .menu .menu__item input:checked ~ .menu__item__price {
+  .menu__item input:checked ~ .menu__item__price {
     transform: none;
   }
-  .menu .menu__item input:checked ~ .menu__item__check {
+  .menu__item input:checked ~ .menu__item__check {
     transform: translateY(-50%) scale(0);
   }
-  .menu .menu__item input:checked ~ .menu__item__text h3,
-  .menu .menu__item input:checked ~ .menu__item__text p {
+  .menu__item input:checked ~ .menu__item__text h3,
+  .menu__item input:checked ~ .menu__item__text p {
     white-space: normal;
     overflow: visible;
     text-overflow: unset;
     max-width: none;
   }
-  .menu .menu__item:hover .menu__item__bg {
+  .menu__item:hover .menu__item__bg {
     transform: translateX(0);
   }
-  .menu .menu__item:hover .menu__item__price {
+  .menu__item:hover .menu__item__price {
     transform: translateX(-35px);
   }
-  .menu .menu__item:hover .menu__item__check {
+  .menu__item:hover .menu__item__check {
     transform: translateY(-50%) scale(1);
+  }
+  .menu__order {
+    margin-top: 50px;
   }
 }
 @media (min-width: 1024px) {
   .menu {
     max-width: 1050px;
     margin: 0 auto;
+    position: relative;
+    margin-top: -50px;
     padding: 50px 80px;
+  }
+  .menu__title {
+    font-size: 36px;
+  }
+  .menu__item {
+    padding: 25px 30px;
+  }
+  .menu__item__text h3 {
+    font-size: 20px;
+  }
+  .menu__item__text p {
+    font-size: 17px;
+  }
+  .menu__item__price {
+    font-size: 17px;
   }
   .restaurant__banner img {
     height: 400px;
@@ -754,18 +775,6 @@ body {
   .menu__header {
     justify-content: center;
     gap: 30px;
-  }
-  .menu__item {
-    padding: 25px 30px;
-  }
-  .menu__item .menu__item__text h3 {
-    font-size: 20px;
-  }
-  .menu__item .menu__item__text p {
-    font-size: 17px;
-  }
-  .menu__item .menu__item__price {
-    font-size: 17px;
   }
 }
 
