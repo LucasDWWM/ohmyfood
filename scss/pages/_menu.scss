@@ -240,18 +240,6 @@
       text-align: center;
     }
 
-    &__section {
-      margin-top: 50px;
-
-      .menu__subtitle {
-        font-size: 20px;
-      }
-
-      .menu__items {
-        gap: 20px;
-      }
-    }
-
     &__item {
       padding: 20px;
 
@@ -259,7 +247,7 @@
         pointer-events: none;
       }
 
-      // Supprimer les effets du checked sur desktop
+      // ANNULATION des styles "checked"
       input:checked ~ .menu__item__bg {
         transform: translateX(100%);
       }
@@ -280,7 +268,7 @@
         max-width: none;
       }
 
-      // Hover only (desktop)
+      // HOVER uniquement
       &:hover .menu__item__bg {
         transform: translateX(0);
       }
@@ -292,10 +280,6 @@
       &:hover .menu__item__check {
         transform: translateY(-50%) scale(1);
       }
-    }
-
-    &__order {
-      margin-top: 50px;
     }
   }
 }
@@ -314,17 +298,42 @@
 
     &__item {
       padding: 25px 30px;
+      cursor: default;
 
-      &__text h3 {
-        font-size: 20px;
+      input[type="checkbox"] {
+        pointer-events: none;
       }
 
-      &__text p {
-        font-size: 17px;
+      input:checked ~ .menu__item__bg {
+        transform: translateX(100%);
       }
 
-      &__price {
-        font-size: 17px;
+      input:checked ~ .menu__item__price {
+        transform: none;
+      }
+
+      input:checked ~ .menu__item__check {
+        transform: translateY(-50%) scale(0);
+      }
+
+      input:checked ~ .menu__item__text h3,
+      input:checked ~ .menu__item__text p {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        max-width: none;
+      }
+
+      &:hover .menu__item__bg {
+        transform: translateX(0);
+      }
+
+      &:hover .menu__item__price {
+        transform: translateX(-35px);
+      }
+
+      &:hover .menu__item__check {
+        transform: translateY(-50%) scale(1);
       }
     }
   }
@@ -339,3 +348,4 @@
     gap: 30px;
   }
 }
+

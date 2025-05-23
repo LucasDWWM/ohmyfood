@@ -701,15 +701,6 @@ body {
     font-size: 32px;
     text-align: center;
   }
-  .menu__section {
-    margin-top: 50px;
-  }
-  .menu__section .menu__subtitle {
-    font-size: 20px;
-  }
-  .menu__section .menu__items {
-    gap: 20px;
-  }
   .menu__item {
     padding: 20px;
   }
@@ -741,9 +732,6 @@ body {
   .menu__item:hover .menu__item__check {
     transform: translateY(-50%) scale(1);
   }
-  .menu__order {
-    margin-top: 50px;
-  }
 }
 @media (min-width: 1024px) {
   .menu {
@@ -758,15 +746,35 @@ body {
   }
   .menu__item {
     padding: 25px 30px;
+    cursor: default;
   }
-  .menu__item__text h3 {
-    font-size: 20px;
+  .menu__item input[type=checkbox] {
+    pointer-events: none;
   }
-  .menu__item__text p {
-    font-size: 17px;
+  .menu__item input:checked ~ .menu__item__bg {
+    transform: translateX(100%);
   }
-  .menu__item__price {
-    font-size: 17px;
+  .menu__item input:checked ~ .menu__item__price {
+    transform: none;
+  }
+  .menu__item input:checked ~ .menu__item__check {
+    transform: translateY(-50%) scale(0);
+  }
+  .menu__item input:checked ~ .menu__item__text h3,
+  .menu__item input:checked ~ .menu__item__text p {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: none;
+  }
+  .menu__item:hover .menu__item__bg {
+    transform: translateX(0);
+  }
+  .menu__item:hover .menu__item__price {
+    transform: translateX(-35px);
+  }
+  .menu__item:hover .menu__item__check {
+    transform: translateY(-50%) scale(1);
   }
   .restaurant__banner img {
     height: 400px;
