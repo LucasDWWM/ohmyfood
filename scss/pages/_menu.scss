@@ -262,10 +262,10 @@
 
       input:checked ~ .menu__item__text h3,
       input:checked ~ .menu__item__text p {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
-        max-width: none;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        max-width: none !important;
       }
 
       // HOVER uniquement

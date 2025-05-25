@@ -718,10 +718,10 @@ body {
   }
   .menu__item input:checked ~ .menu__item__text h3,
   .menu__item input:checked ~ .menu__item__text p {
-    white-space: normal;
-    overflow: visible;
-    text-overflow: unset;
-    max-width: none;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: none !important;
   }
   .menu__item:hover .menu__item__bg {
     transform: translateX(0);
