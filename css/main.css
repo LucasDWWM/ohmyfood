@@ -367,6 +367,10 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
 }
+.intro .btn:hover {
+  background: linear-gradient(to right, rgb(160.5, 107.125, 224.375), rgb(255, 146.5, 225.0410447761));
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
 
 .fonctionnement {
   background-color: white;
