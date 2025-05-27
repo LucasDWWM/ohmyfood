@@ -14,11 +14,15 @@ body {
   padding: 0;
 }
 
-h1, h2, h3 {
-  font-family: "Shrikhand";
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-body {
+h1 {
+  font-family: "Shrikhand", cursive;
+}
+
+h2, h3, p, a, li, span {
   font-family: "Roboto", sans-serif;
 }
 
@@ -396,6 +400,7 @@ body {
   font-weight: 500;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   position: relative;
+  transition: all 0.3s ease;
 }
 .fonctionnement .steps li::before {
   content: counter(step);
@@ -423,7 +428,9 @@ body {
 .fonctionnement .steps li:hover {
   background-color: #ececec;
   transform: scale(1.02);
-  transition: all 0.3s ease;
+}
+.fonctionnement .steps li:hover .icon-gray i {
+  color: #9356DC;
 }
 .fonctionnement .icon-wrapper {
   padding: 10px;
@@ -444,6 +451,7 @@ body {
 }
 .fonctionnement .icon-gray i {
   color: #818181;
+  transition: color 0.3s ease;
 }
 
 .bg-gray {
